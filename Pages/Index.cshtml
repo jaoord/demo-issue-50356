@@ -1,0 +1,48 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-10 col-xl-8 advanced-search-form">
+            <h1>TEST CSS ISOLATION</h1>
+            <form action="/advancedsearch#flightsoverview">
+
+                <div class="row search-group">
+                    <div class="col-12">
+                        <h5>Airport - enter ICAO code or name</h5>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="From">From</label>
+                        <input type="text" asp-for="From" class="advanced-search-form__input" />
+                    </div>
+
+                    <div class="col-6">
+                        <label asp-for="To">To</label>
+                        <input type="text" asp-for="To" class="advanced-search-form__input" />
+                    </div>
+                </div>
+
+                <div class="row search-group">
+                    <div class="col-12">
+                        <h5>Block time in minutes</h5>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="MinFlightTime">Minimum</label>
+                        <input type="number" min="0" step="10" asp-for="MinFlightTime" class="advanced-search-form__input" />
+                    </div>
+
+                    <div class="col-6">
+                        <label asp-for="MaxFlightTime">Maximum</label>
+                        <input type="number" min="0" step="10" asp-for="MaxFlightTime" class="advanced-search-form__input" />
+                    </div>
+                </div>
+
+                <button type="submit">Search flights</button>
+            </form>
+        </div>
+    </div>
+</div>
